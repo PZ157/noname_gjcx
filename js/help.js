@@ -1,10 +1,4 @@
-import { lib, game, ui, get, ai, _status } from '../../../noname.js';
-
-ui.joint = function (strings, ...values) {
-	let str = strings.reduce((acc, str, i) => acc + str + (values[i] || ''), '');
-	let lines = str.split('\n').map((line) => line.trimStart());
-	return lines.join('').trim();
-};
+import { lib, game, ui, get, ai, _status } from './utils.js';
 
 export let help = {
 	官将重修: ui.joint`

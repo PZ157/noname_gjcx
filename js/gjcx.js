@@ -9,7 +9,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				skills: ['gjcxs_tongqi', 'gjcxs_shangxue'],
 				dieAudios: ['caochun'],
-				trashBin: ['ext:官将重修/image/character/gjcx_caochun.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_caochun.jpg',
 			},
 			gjcx_caojinyu: {
 				sex: 'female',
@@ -18,7 +18,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				names: '曹|null',
 				skills: ['gjcxs_xianyan', 'gjcxs_shanshen'],
 				dieAudios: ['caojinyu'],
-				trashBin: ['ext:官将重修/image/character/gjcx_caojinyu.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_caojinyu.jpg',
 			},
 			gjcx_caopi: {
 				sex: 'male',
@@ -28,7 +28,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				isZhugong: true,
 				skills: ['gjcxs_jianbo', 'gjcxs_lundian', 'gjcxs_songwei'],
 				dieAudios: ['re_caopi'],
-				trashBin: ['ext:官将重修/image/character/gjcx_caopi.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_caopi.jpg',
 			},
 			gjcx_chenlin: {
 				sex: 'male',
@@ -36,7 +36,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_xiwen', 'gjcxs_sanyi'],
 				dieAudios: ['chenlin'],
-				trashBin: ['ext:官将重修/image/character/gjcx_chenlin.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_chenlin.jpg',
 			},
 			gjcx_duji: {
 				sex: 'male',
@@ -44,7 +44,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_andong', 'gjcxs_kuanhui'],
 				dieAudios: ['duji'],
-				trashBin: ['character:ns_duji'],
+				img: 'image/character/ns_duji.jpg',
 			},
 			gjcx_hanhaoshihuan: {
 				sex: 'male',
@@ -53,14 +53,14 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				names: '韩|浩-史|涣',
 				skills: ['gjcxs_jinwei', 'gjcxs_yonglve'],
 				dieAudios: ['re_hanhaoshihuan'],
-				trashBin: ['ext:官将重修/image/character/gjcx_hanhaoshihuan.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_hanhaoshihuan.jpg',
 			},
 			gjcx_liangxi: {
 				sex: 'male',
 				group: 'wei',
 				hp: 4,
 				skills: ['gjcxs_zhizui', 'gjcxs_daisi'],
-				trashBin: ['character:ddd_liangxi'],
+				img: 'image/character/ddd_liangxi.jpg',
 			},
 			gjcx_litong: {
 				sex: 'male',
@@ -68,7 +68,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				skills: ['gjcxs_tuifeng'],
 				dieAudios: ['litong'],
-				trashBin: ['character:litong'],
+				img: 'image/character/litong.jpg',
 			},
 			gjcx_liuhui: {
 				sex: 'male',
@@ -77,7 +77,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_geyuan', 'gjcxs_mouhe'],
 				dieAudios: ['liuhui'],
-				trashBin: ['character:liuhui'],
+				img: 'image/character/liuhui.jpg',
 			},
 			gjcx_luzhi: {
 				sex: 'male',
@@ -85,7 +85,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_qingzhong', 'gjcxs_lizhong'],
 				dieAudios: ['luzhi'],
-				trashBin: ['character:luzhi'],
+				img: 'image/character/luzhi.jpg',
 			},
 			gjcx_lvqian: {
 				sex: 'male',
@@ -93,7 +93,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				skills: ['gjcxs_weilu', 'gjcxs_zengdao'],
 				dieAudios: ['lvqian'],
-				trashBin: ['character:lvqian'],
+				img: 'image/character/lvqian.jpg',
 			},
 			gjcx_ruanhui: {
 				sex: 'female',
@@ -102,7 +102,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				names: '阮|null',
 				skills: ['gjcxs_mingcha', 'gjcxs_jingzhong'],
 				dieAudios: ['ruanhui'],
-				trashBin: ['character:ruanhui'],
+				img: 'image/character/ruanhui.jpg',
 			},
 			gjcx_simalang: {
 				sex: 'male',
@@ -111,7 +111,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				names: '司马|朗',
 				skills: ['gjcxs_paiyi', 'gjcxs_jizu'],
 				dieAudios: ['ext:官将重修/audio/character:true'],
-				trashBin: ['character:simalang'],
+				img: 'image/character/simalang.jpg',
 			},
 			gjcx_xiahouhui: {
 				sex: 'female',
@@ -122,7 +122,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				names: '夏侯|徽',
 				skills: ['gjcxs_shidu', 'gjcxs_yuanrong'],
 				dieAudios: ['jin_xiahouhui'],
-				trashBin: ['ext:官将重修/image/character/gjcx_xiahouhui.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_xiahouhui.jpg',
 			},
 			gjcx_zhanggong: {
 				sex: 'male',
@@ -130,7 +130,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_daishi', 'gjcxs_qianxin'],
 				dieAudios: ['zhanggong'],
-				trashBin: ['character:re_zhanggong'],
+				img: 'image/character/re_zhanggong.jpg',
 			},
 			gjcx_zhuling: {
 				sex: 'male',
@@ -138,7 +138,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				skills: ['gjcxs_lizhan'],
 				dieAudios: ['zhuling'],
-				trashBin: ['character:ol_zhuling'],
+				img: 'image/character/ol_zhuling.jpg',
 			},
 
 			gjcx_dengzhi: {
@@ -147,7 +147,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_jianliang', 'gjcxs_sujian'],
 				dieAudios: ['dengzhi'],
-				trashBin: ['character:re_dengzhi'],
+				img: 'image/character/re_dengzhi.jpg',
 			},
 			gjcx_jiangwan: {
 				sex: 'male',
@@ -155,7 +155,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_zhenting', 'gjcxs_kezun'],
 				dieAudios: ['sp_jiangwan'],
-				trashBin: ['character:sp_jiangwan'],
+				img: 'image/character/sp_jiangwan.jpg',
 			},
 			gjcx_mazhong: {
 				sex: 'male',
@@ -163,7 +163,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				skills: ['gjcxs_weien'],
 				dieAudios: ['re_mazhong'],
-				trashBin: ['character:re_mazhong'],
+				img: 'image/character/re_mazhong.jpg',
 			},
 			gjcx_xiangchong: {
 				sex: 'male',
@@ -171,7 +171,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				skills: ['gjcxs_xiaojun'],
 				dieAudios: ['xiangchong'],
-				trashBin: ['character:xiangchong'],
+				img: 'image/character/xiangchong.jpg',
 			},
 			gjcx_zhangxingcai: {
 				sex: 'female',
@@ -180,7 +180,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				names: '张|null',
 				skills: ['gjcxs_mianxiu', 'gjcxs_jingsi'],
 				dieAudios: ['zhangxingcai'],
-				trashBin: ['ext:官将重修/image/character/gjcx_zhangxingcai.png'],
+				img: 'extension/官将重修/image/character/gjcx_zhangxingcai.png',
 			},
 			gjcx_zongyu: {
 				sex: 'male',
@@ -188,7 +188,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_yuyan', 'gjcxs_chengshang'],
 				dieAudios: ['zongyu'],
-				trashBin: ['character:zongyu'],
+				img: 'image/character/zongyu.jpg',
 			},
 
 			gjcx_heqi: {
@@ -197,7 +197,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_sheqi'],
 				dieAudios: ['ext:官将重修/audio/character:true'],
-				trashBin: ['ext:官将重修/image/character/gjcx_heqi.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_heqi.jpg',
 			},
 			gjcx_kanze: {
 				sex: 'male',
@@ -205,7 +205,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_shiru', 'gjcxs_lizhu'],
 				dieAudios: ['kanze'],
-				trashBin: ['ext:官将重修/image/character/gjcx_kanze.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_kanze.jpg',
 			},
 			gjcx_lvdai: {
 				sex: 'male',
@@ -213,7 +213,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				skills: ['gjcxs_qingke', 'gjcxs_fenggong'],
 				dieAudios: ['lvdai'],
-				trashBin: ['character:lvdai'],
+				img: 'image/character/lvdai.jpg',
 			},
 			gjcx_lvfan: {
 				sex: 'male',
@@ -221,7 +221,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_yanji', 'gjcxs_zuojun'],
 				dieAudios: ['sp_lvfan'],
-				trashBin: ['character:sp_lvfan'],
+				img: 'image/character/sp_lvfan.jpg',
 			},
 			gjcx_sunshao: {
 				sex: 'male',
@@ -229,7 +229,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_shoucheng', 'gjcxs_zuici'],
 				dieAudios: ['sp_sunshao'],
-				trashBin: ['character:sp_sunshao'],
+				img: 'image/character/sp_sunshao.jpg',
 			},
 			gjcx_tenggongzhu: {
 				sex: 'female',
@@ -238,7 +238,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				names: '孙|null',
 				skills: ['gjcxs_gongci', 'gjcxs_shangzhu'],
 				dieAudios: ['tenggongzhu'],
-				trashBin: ['ext:官将重修/image/character/gjcx_tenggongzhu.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_tenggongzhu.jpg',
 			},
 
 			gjcx_caojie: {
@@ -247,7 +247,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_shouxi', 'gjcxs_zhixi'],
 				dieAudios: ['ext:官将重修/audio/character:true'],
-				trashBin: ['ext:官将重修/image/character/gjcx_caojie.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_caojie.jpg',
 			},
 			gjcx_hm_caojie: {
 				sex: 'female',
@@ -256,7 +256,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				isUnseen: true,
 				skills: ['gjcxs_jishi', 'huimin'],
 				dieAudios: ['ext:官将重修/audio/character:true'],
-				trashBin: ['ext:官将重修/image/character/gjcx_hm_caojie.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_hm_caojie.jpg',
 			},
 			gjcx_caimaozhangyun: {
 				sex: 'male',
@@ -264,7 +264,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				names: '蔡|瑁-张|允',
 				skills: ['gjcxs_biwen'],
-				trashBin: ['ext:官将重修/image/character/gjcx_caimaozhangyun.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_caimaozhangyun.jpg',
 			},
 			gjcx_caiyong: {
 				sex: 'male',
@@ -272,7 +272,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_pizhuan', 'gjcxs_tongbo'],
 				dieAudios: ['ext:官将重修/audio/character:true'],
-				trashBin: ['ext:官将重修/image/character/gjcx_caiyong.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_caiyong.jpg',
 			},
 			gjcx_jianshuo: {
 				sex: 'male',
@@ -280,7 +280,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 7,
 				skills: ['gjcxs_wulve', 'gjcxs_quce'],
 				dieAudios: ['tw_jianshuo'],
-				trashBin: ['character:ddd_jianshuo'],
+				img: 'image/character/ddd_jianshuo.jpg',
 			},
 			gjcx_liuyao: {
 				sex: 'male',
@@ -288,7 +288,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 4,
 				skills: ['gjcxs_niju', 'gjcxs_zangpi'],
 				dieAudios: ['liuyao'],
-				trashBin: ['ext:官将重修/image/character/gjcx_liuyao.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_liuyao.jpg',
 			},
 			gjcx_tianfeng: {
 				sex: 'male',
@@ -296,7 +296,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_sijian', 'gjcxs_suishi'],
 				dieAudios: ['tianfeng'],
-				trashBin: ['ext:官将重修/image/character/gjcx_tianfeng.jpg'],
+				img: 'extension/官将重修/image/character/gjcx_tianfeng.jpg',
 			},
 			gjcx_zhangling: {
 				sex: 'male',
@@ -305,7 +305,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				names: '张|陵',
 				skills: ['gjcxs_fulu', 'gjcxs_daofa'],
 				dieAudios: ['zhangling'],
-				trashBin: ['character:zhangling'],
+				img: 'image/character/zhangling.jpg',
 			},
 
 			gjcx_wangxiang: {
@@ -315,7 +315,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_bingli', 'gjcxs_qingda'],
 				dieAudios: ['wangxiang'],
-				trashBin: ['character:wangxiang'],
+				img: 'image/character/wangxiang.jpg',
 			},
 			gjcx_weiguan: {
 				sex: 'male',
@@ -324,7 +324,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 3,
 				skills: ['gjcxs_zhongyun', 'gjcxs_shenpin'],
 				dieAudios: ['weiguan'],
-				trashBin: ['character:weiguan'],
+				img: 'image/character/weiguan.jpg',
 			},
 			sbqq: {
 				sex: 'male',
@@ -332,7 +332,7 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 				hp: 10,
 				initFilters: ['noZhuHp'],
 				skills: ['shit', 'ban', 'hucksterize', 'nonfeasance'],
-				trashBin: ['ext:官将重修/image/character/sbqq.jpg'],
+				img: 'extension/官将重修/image/character/sbqq.jpg',
 			},
 		},
 		characterSort: {
@@ -6896,5 +6896,8 @@ game.import('character', (lib, game, ui, get, ai, _status) => {
 			nonfeasance_info: '锁定技，你的技能出现bug时一律不修并尝试解决引起bug的其他角色。',
 		},
 	};
+	for (let i in gjcx.character) {
+		gjcx.character[i] = new lib.element.Character(gjcx.character[i]);
+	}
 	return gjcx;
 });

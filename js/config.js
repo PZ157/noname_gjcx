@@ -1,10 +1,4 @@
-import { lib, game, ui, get, ai, _status } from '../../../noname.js';
-
-ui.joint = function (strings, ...values) {
-	let str = strings.reduce((acc, str, i) => acc + str + (values[i] || ''), '');
-	let lines = str.split('\n').map((line) => line.trimStart());
-	return lines.join('').trim();
-};
+import { lib, game, ui, get, ai, _status } from './utils.js';
 
 export let config = {
 	tip1: {
@@ -26,64 +20,15 @@ export let config = {
 	editBanned: {
 		name: '编辑当前模式禁将',
 		clear: true,
-		onclick: function () {
-			let container = ui.create.div('.popup-container.editor');
-			let node = container;
-			const banname = get.mode() + '_banned';
-			let map = lib.config[banname] || [];
-			let str = 'bannedList = [';
-			for (let i = 0; i < map.length; i++) {
-				if (i % 5 === 0) str += '\n	';
-				str += '"' + map[i] + '", ';
-			}
-			str += '\n];\n// 请在[]内进行编辑，或借此复制/粘贴内容以备份/还原禁将配置\n// 请务必使用英文标点符号！';
-			node.code = str;
-			ui.window.classList.add('shortcutpaused');
-			ui.window.classList.add('systempaused');
-			let saveInput = function () {
-				let code;
-				if (container.editor) code = container.editor.getValue();
-				else if (container.textarea) code = container.textarea.value;
-				try {
-					var bannedList = null;
-					eval(code);
-					if (!Array.isArray(bannedList)) {
-						throw '类型不符';
-					}
-				} catch (e) {
-					if (e === '类型不符') alert(e);
-					else alert('代码语法有错误，请仔细检查（' + e + '）');
-					return;
-				}
-				game.saveConfig(banname, bannedList);
-				ui.window.classList.remove('shortcutpaused');
-				ui.window.classList.remove('systempaused');
-				container.delete();
-				container.code = code;
-				delete window.saveNonameInput;
-			};
-			window.saveNonameInput = saveInput;
-			let editor = ui.create.editor(container, saveInput);
-			if (node.aced) {
-				ui.window.appendChild(node);
-				node.editor.setValue(node.code, 1);
-			} else if (lib.device === 'ios') {
-				ui.window.appendChild(node);
-				if (!node.textarea) {
-					let textarea = document.createElement('textarea');
-					editor.appendChild(textarea);
-					node.textarea = textarea;
-					lib.setScroll(textarea);
-				}
-				node.textarea.value = node.code;
-			} else {
-				if (!window.CodeMirror) {
-					import('../../../game/codemirror.js').then(() => {
-						lib.codeMirrorReady(node, editor);
-					});
-					lib.init.css(lib.assetURL + 'layout/default', 'codemirror');
-				} else lib.codeMirrorReady(node, editor);
-			}
+		onclick() {
+			game.arrayEditor(get.mode() + '_banned', null, '即时生效，与本体禁将功能不冲突');
+		},
+	},
+	editConnectBanned: {
+		name: '编辑当前模式联机禁将',
+		clear: true,
+		onclick() {
+			game.arrayEditor('connect_' + get.mode() + '_banned', null, '即时生效，与本体禁将功能不冲突');
 		},
 	},
 	banQh: {
@@ -99,29 +44,14 @@ export let config = {
 	exportPz: {
 		name: '复制本扩展配置',
 		clear: true,
-		onclick: function () {
-			let txt = '{';
-			for (let i in lib.config) {
-				if (!i.indexOf('extension_官将重修_'))
-					txt += '\r' + i.slice(15) + ' : ' + JSON.stringify(lib.config[i]).replace('\n', '\r') + ',';
-			}
-			txt += '\r}';
-			let textarea = document.createElement('textarea');
-			textarea.setAttribute('readonly', 'readonly');
-			textarea.value = txt;
-			document.body.appendChild(textarea);
-			textarea.select();
-			if (document.execCommand('copy')) {
-				document.execCommand('copy');
-				alert('『官将重修』配置已成功复制到剪切板，请您及时粘贴保存');
-			} else alert('复制失败');
-			document.body.removeChild(textarea);
+		onclick() {
+			game.copy(txt, '『官将重修』配置已成功复制到剪切板，请您及时粘贴保存');
 		},
 	},
 	loadPz: {
 		name: '载入本扩展配置',
 		clear: true,
-		onclick: function () {
+		onclick() {
 			let container = ui.create.div('.popup-container.editor');
 			let node = container;
 			let str = '// 请完整粘贴你保存的『官将重修』配置到等号右端\r_status.gjcx_config = ';
@@ -178,70 +108,15 @@ export let config = {
 	editBook: {
 		name: '编辑书禁用技能池',
 		clear: true,
-		onclick: function () {
-			let container = ui.create.div('.popup-container.editor');
-			let node = container;
-			let map = lib.config.extension_官将重修_book || [];
-			let str = 'gjcx_book = [';
-			for (let i = 0; i < map.length; i++) {
-				if (i % 5 === 0) str += '\n	';
-				str += '"' + map[i] + '", ';
-			}
-			str += '\n];\n// 请在[]内进行编辑，或借此复制/粘贴内容以备份/还原配置\n// 请务必使用英文标点符号！';
-			node.code = str;
-			ui.window.classList.add('shortcutpaused');
-			ui.window.classList.add('systempaused');
-			let saveInput = function () {
-				let code;
-				if (container.editor) code = container.editor.getValue();
-				else if (container.textarea) code = container.textarea.value;
-				try {
-					var gjcx_book = null;
-					eval(code);
-					if (!Array.isArray(gjcx_book)) {
-						throw '类型不符';
-					}
-				} catch (e) {
-					if (e === '类型不符') alert(e);
-					else alert('代码语法有错误，请仔细检查（' + e + '）');
-					return;
-				}
-				game.saveExtensionConfig('官将重修', 'book', gjcx_book);
-				ui.window.classList.remove('shortcutpaused');
-				ui.window.classList.remove('systempaused');
-				container.delete();
-				container.code = code;
-				delete window.saveNonameInput;
-			};
-			window.saveNonameInput = saveInput;
-			let editor = ui.create.editor(container, saveInput);
-			if (node.aced) {
-				ui.window.appendChild(node);
-				node.editor.setValue(node.code, 1);
-			} else if (lib.device === 'ios') {
-				ui.window.appendChild(node);
-				if (!node.textarea) {
-					let textarea = document.createElement('textarea');
-					editor.appendChild(textarea);
-					node.textarea = textarea;
-					lib.setScroll(textarea);
-				}
-				node.textarea.value = node.code;
-			} else {
-				if (!window.CodeMirror) {
-					import('../../../game/codemirror.js').then(() => {
-						lib.codeMirrorReady(node, editor);
-					});
-					lib.init.css(lib.assetURL + 'layout/default', 'codemirror');
-				} else lib.codeMirrorReady(node, editor);
-			}
+		onclick() {
+			game.arrayEditor('extension_官将重修_book');
 		},
 	},
 	deleteBook: {
 		name: '清空书禁用技能池',
 		clear: true,
-		onclick: function () {
-			if (confirm('您确定要清空【书】的禁用技能池？')) {
+		onclick() {
+			if (confirm('您确定要清空【书】的禁用技能池吗？')) {
 				game.saveExtensionConfig('官将重修', 'book', []);
 				alert('清除成功');
 			}
@@ -410,7 +285,7 @@ export let config = {
 		name: '是否取消其余目标',
 		intro: '使用【方天画戟】额外指定目标后，一旦符合上一选项所选条件，取消其余目标',
 		init: true,
-		onclick: function (item) {
+		onclick(item) {
 			if (item && lib.config.extension_官将重修_ftTj === 'off')
 				alert('［执行效果前提］为〔直接执行〕，选择此项使用【方天画戟】会取消所有目标！');
 			game.saveExtensionConfig('官将重修', 'ftRes', item);

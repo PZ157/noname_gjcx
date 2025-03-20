@@ -1,5 +1,4 @@
-import { lib, game, ui, get, ai, _status } from '../../../noname.js';
-import dedent from '../../../game/dedent.js';
+import { lib, game, ui, get, ai, _status } from './utils.js';
 
 export function precontent(config, pack) {
 	{
@@ -42,20 +41,12 @@ export function precontent(config, pack) {
 			alert('Error:『官将重修』扩展卡牌导入失败');
 		}
 	);
-	ui.joint = function (strings, ...values) {
-		let str = strings.reduce((acc, str, i) => acc + str + (values[i] || ''), '');
-		let lines = str.split('\n').map((line) => line.trimStart());
-		return lines.join('').trim();
-	};
 	if (lib.config.extension_官将重修_changelog !== lib.extensionPack.官将重修.version)
 		lib.game.showChangeLog = function () {
 			//更新内容
-			let str = [
-				'新增身份模式专属武将傻逼QQ',
-				'修复ui.joint',
-			];
+			let str = ['新增［编辑当前模式联机禁将］功能', '集成本扩展自定义函数', '扩展武将Character实例化'];
 			let ul = document.createElement('ul'),
-				players = ['sbqq'],
+				players = [],
 				cards = [];
 			ul.style.textAlign = 'left';
 			for (let i = 0; i < str.length; i++) {
@@ -218,7 +209,7 @@ export function precontent(config, pack) {
 			str = str.slice(str.indexOf('{') + 1, str.lastIndexOf('}'));
 			str = str.replace(
 				/var map = {};([\s\S]*?)event.losing_map = map;/,
-				dedent`
+				game.dedent`
 					var map = {};
 					for (let i = 0; i < cards.length; i++) {
 						let owner = get.owner(cards[i], 'judge');

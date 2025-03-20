@@ -1,4 +1,4 @@
-import { lib, game, ui, get, ai, _status } from '../../../noname.js';
+import { lib, game, ui, get, ai, _status } from './utils.js';
 
 export function content(config, pack) {
 	if (lib.rank) { //武将评级
@@ -42,12 +42,16 @@ export function content(config, pack) {
 			game.getFileList('extension/十周年UI/image/card', (folders, files) => {
 				for (let i of list) {
 					let img = 'phd_' + i + '.webp';
-					if (!files.includes(img))
-						game.readFile('extension/官将重修/copy/' + img, (data) => {
+					if (files.includes(img)) continue;
+					game.readFile(
+						'extension/官将重修/copy/' + img,
+						(data) => {
 							game.writeFile(data, 'extension/十周年UI/image/card', img, () => {});
-						}, (err) => {
+						},
+						(err) => {
 							alert('复制『官将重修』彩色卡牌素材时出现问题：\n' + err);
-						});
+						}
+					);
 				}
 			});
 	}
